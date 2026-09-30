@@ -12,7 +12,7 @@ Produces 5 separate tables, matching the schema:
 Design notes:
   - The engine must NEVER read ground_truth.csv. It exists only so you can score
     your detection accuracy for the demo/pitch.
-  - Customer C0001 ("Sophie Van Damme") is a fully hand-scripted moving-house case,
+  - Customer C0001 ("Amy Van Damme") is a fully hand-scripted moving-house case,
     matching the day-by-day signal timeline used in the demo script:
       Day 1  notary/rent-deposit payment
       Day 3  moving company payment
@@ -65,6 +65,12 @@ TODAY = datetime(2026, 9, 30)
 def baseline_transactions(rng, customer_id, home_city, salary, days=90):
     """Ordinary, unremarkable transaction history."""
     txns = []
+    # Pick ONE housing situation for this customer and keep it fixed across the whole
+    # history -- a real person doesn't switch between renting and having a mortgage
+    # every month. Randomizing this per-transaction was creating an accidental
+    # "changed landlord" signal that looked exactly like a moving-house event.
+    housing_merchant = rng.choice(["Rent Payment - Immo Janssens", "Mortgage Payment - KBC"])
+    utility_provider = rng.choice(["Fluvius Energy", "Telenet", "Proximus"])
     start = TODAY - timedelta(days=days)
     d = start
     while d <= TODAY:
@@ -73,16 +79,14 @@ def baseline_transactions(rng, customer_id, home_city, salary, days=90):
                          "Salary - Employer", "income", home_city])
         if d.day == 3:
             txns.append([customer_id, d.strftime("%Y-%m-%d"), -round(rng.uniform(650, 1100), 2),
-                         rng.choice(["Rent Payment - Immo Janssens", "Mortgage Payment - KBC"]),
-                         "housing", home_city])
+                         housing_merchant, "housing", home_city])
         if d.weekday() in (1, 5) and rng.random() < 0.7:
             txns.append([customer_id, d.strftime("%Y-%m-%d"), -round(rng.uniform(15, 90), 2),
                          rng.choice(["Colruyt", "Delhaize", "Aldi", "Carrefour"]),
                          "groceries", home_city])
         if d.day in (5, 18) and rng.random() < 0.5:
             txns.append([customer_id, d.strftime("%Y-%m-%d"), -round(rng.uniform(40, 120), 2),
-                         rng.choice(["Fluvius Energy", "Telenet", "Proximus"]),
-                         "utilities", home_city])
+                         utility_provider, "utilities", home_city])
         if rng.random() < 0.15:
             txns.append([customer_id, d.strftime("%Y-%m-%d"), -round(rng.uniform(20, 65), 2),
                          rng.choice(["Restaurant De Kroon", "Take-away Sushi", "Cafe Central"]),
@@ -96,12 +100,12 @@ def baseline_transactions(rng, customer_id, home_city, salary, days=90):
 
 
 # ---------------------------------------------------------------------------
-# Sophie: the fully hand-scripted star case
+# Amy: the fully hand-scripted star case
 # ---------------------------------------------------------------------------
 
-def build_sophie():
+def build_Amy():
     cid = "C0001"
-    customer = [cid, "Sophie Van Damme", 29, "Gent", "mid",
+    customer = [cid, "Amy Van Damme", 29, "Gent", "mid",
                 json.dumps(["Current Account", "Savings Account", "Home Insurance"])]
 
     d0 = TODAY - timedelta(days=20)  # "Day 1" of the timeline, 20 days ago
@@ -222,8 +226,8 @@ def inject_planted_event(rng, cid, event_type, home_city, salary, base_txns):
 def build_population(n, event_rate, rng):
     customers, transactions, app_events, kate_messages, ground_truth = [], [], [], [], []
 
-    # customer C0001 is always the hand-scripted Sophie
-    c, t_, a_, k_, g_ = build_sophie()
+    # customer C0001 is always the hand-scripted Amy
+    c, t_, a_, k_, g_ = build_Amy()
     customers.append(c)
     transactions += t_
     app_events += a_
@@ -273,8 +277,8 @@ def write_csv(path, header, rows):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--n", type=int, default=400, help="total number of customers (Sophie counts as 1)")
-    parser.add_argument("--event-rate", type=float, default=0.12, help="fraction of non-Sophie customers with a planted event")
+    parser.add_argument("--n", type=int, default=400, help="total number of customers (Amy counts as 1)")
+    parser.add_argument("--event-rate", type=float, default=0.12, help="fraction of non-Amy customers with a planted event")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--outdir", type=str, default=".")
     args = parser.parse_args()

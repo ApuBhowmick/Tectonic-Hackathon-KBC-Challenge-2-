@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KBC Life-Event Signal Engine</title>
+<style>
+  :root {
+    --kbc-blue: #004a97;
+    --kbc-blue-dark: #00305e;
+    --accent: #00a3e0;
+    --bg: #f4f6f9;
+    --card-bg: #ffffff;
+    --text: #1a1f2b;
+    --text-muted: #5c6470;
+    --border: #e3e7ee;
+    --success: #1c9e5a;
+    --warn: #d97706;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 16px 64px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px; flex-wrap: wrap; gap: 12px;
+  }
+  header h1 { font-size: 20px; margin: 0; color: var(--kbc-blue-dark); }
+  header .tag {
+    background: var(--kbc-blue); color: white; font-size: 12px; font-weight: 600;
+    padding: 4px 10px; border-radius: 999px; letter-spacing: .3px;
+  }
+  .tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+  .tab-btn {
+    padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--card-bg); cursor: pointer; font-size: 14px; font-weight: 600;
+    color: var(--text-muted);
+  }
+  .tab-btn.active { background: var(--kbc-blue); color: white; border-color: var(--kbc-blue); }
+  section { display: none; }
+  section.active { display: block; }
+
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px; margin-bottom: 16px;
+  }
+
+  /* ---- Sophie's phone mockup ---- */
+  .phone {
+    max-width: 380px; margin: 0 auto; border-radius: 28px; border: 8px solid #111;
+    background: #fff; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.15);
+  }
+  .phone-topbar {
+    background: var(--kbc-blue); color: white; padding: 14px 16px;
+    display: flex; align-items: center; gap: 10px; font-weight: 600;
+  }
+  .phone-topbar .avatar {
+    width: 30px; height: 30px; border-radius: 50%; background: var(--accent);
+    display: flex; align-items: center; justify-content: center; font-size: 14px;
+  }
+  .phone-body { padding: 16px; background: #f7f9fc; min-height: 320px; }
+  .bubble {
+    background: white; border-radius: 14px; border-top-left-radius: 4px;
+    padding: 14px 16px; font-size: 14px; line-height: 1.5; box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    animation: fadeIn .4s ease both;
+  }
+  .bubble b { color: var(--kbc-blue-dark); }
+  .why-link {
+    display: inline-block; margin-top: 10px; font-size: 12px; color: var(--accent);
+    cursor: pointer; text-decoration: underline;
+  }
+  .why-panel {
+    margin-top: 10px; background: #eef6fc; border: 1px solid #cfe8f7; border-radius: 10px;
+    padding: 10px 12px; font-size: 12.5px; color: var(--text-muted); display: none;
+  }
+  .why-panel.show { display: block; }
+  .feedback-row { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .fb-btn {
+    flex: 1; min-width: 100px; padding: 10px; border-radius: 10px; border: 1px solid var(--border);
+    background: white; font-size: 12.5px; font-weight: 600; cursor: pointer; color: var(--text);
+  }
+  .fb-btn.primary { background: var(--kbc-blue); color: white; border-color: var(--kbc-blue); }
+  .fb-btn:hover { filter: brightness(0.97); }
+  .signal-timeline { margin-top: 18px; }
+  .signal-row {
+    display: flex; align-items: center; gap: 10px; padding: 8px 0; font-size: 13px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .signal-row:last-child { border-bottom: none; }
+  .signal-day { width: 54px; flex-shrink: 0; color: var(--text-muted); font-weight: 600; }
+  .signal-conf {
+    margin-left: auto; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 999px;
+    background: #eef6fc; color: var(--kbc-blue);
+  }
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: var(--text); color: white; padding: 10px 18px; border-radius: 10px;
+    font-size: 13px; opacity: 0; pointer-events: none; transition: opacity .25s ease;
+  }
+  .toast.show { opacity: 1; }
+
+  /* ---- Dashboard ---- */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; }
+  .stat {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px; text-align: center;
+  }
+  .stat .num { font-size: 28px; font-weight: 800; color: var(--kbc-blue-dark); }
+  .stat .num.good { color: var(--success); }
+  .stat .label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; font-size: 13px; }
+  .bar-label { width: 150px; flex-shrink: 0; color: var(--text); font-weight: 600; }
+  .bar-track { flex: 1; background: #eef1f5; border-radius: 6px; overflow: hidden; height: 18px; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--kbc-blue), var(--accent)); border-radius: 6px; }
+  .bar-count { width: 40px; text-align: right; color: var(--text-muted); font-size: 12px; }
+  .contrast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; margin-top: 6px; }
+  .contrast-card { border: 1px solid var(--border); border-radius: 12px; padding: 14px; background: #fafbfd; }
+  .contrast-card h4 { margin: 0 0 6px; font-size: 13px; color: var(--kbc-blue-dark); }
+  .contrast-card .chan { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-top: 8px; }
+  .chan-voice { background: #fdecec; color: #b3261e; }
+  .chan-kate { background: #eef6fc; color: var(--kbc-blue); }
+  .chan-card { background: #f1f1f1; color: #555; }
+  .note { font-size: 12.5px; color: var(--text-muted); margin-top: 10px; }
+  .weight-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; font-size: 13px; }
+  .weight-label { width: 190px; flex-shrink: 0; }
+  .weight-track { flex: 1; background: #eef1f5; border-radius: 6px; overflow: hidden; height: 14px; }
+  .weight-fill { height: 100%; border-radius: 6px; transition: width .5s ease, background .5s ease; }
+  .weight-fill.strong { background: var(--kbc-blue); }
+  .weight-fill.medium { background: var(--accent); }
+  .weight-fill.weak { background: #b9c2cf; }
+  .weight-val { width: 34px; text-align: right; font-size: 11px; color: var(--text-muted); }
+  .log-entry { padding: 6px 0; border-bottom: 1px dashed var(--border); }
+  .log-entry:last-child { border-bottom: none; }
+  #loadStatus { font-size: 13px; color: var(--text-muted); }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(6px);} to {opacity:1; transform:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>KBC Life-Event Signal Engine</h1>
+    <span class="tag">Tectonic Hackathon — Proof of Concept</span>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="sophie">Sophie's Moment</button>
+    <button class="tab-btn" data-tab="contrast">Same Event, Different Treatment</button>
+    <button class="tab-btn" data-tab="dashboard">Population Dashboard</button>
+  </div>
+
+  <!-- ===== TAB 1: Sophie ===== -->
+  <section id="sophie" class="active">
+    <div class="card">
+      <div class="signal-timeline" id="timeline"></div>
+    </div>
+
+    <div class="phone">
+      <div class="phone-topbar">
+        <div class="avatar">K</div>
+        Kate · KBC Assistant
+      </div>
+      <div class="phone-body">
+        <div class="bubble" id="kateBubble">
+          Hi Sophie 👋 It looks like you might be moving to Antwerp — congrats!
+          Want me to update your address across your bank, insurance and other
+          KBC services in one tap, and check your home insurance for the new place?
+          <div class="why-link" onclick="toggleWhy()">Why am I seeing this?</div>
+          <div class="why-panel" id="whyPanel">
+            We noticed a payment to a moving company, a search about changing your address,
+            and your recent card activity has shifted from Ghent to Antwerp. (Confidence: 88%)
+          </div>
+        </div>
+        <div class="feedback-row">
+          <button class="fb-btn primary" onclick="feedback('yes')">Yes, help me</button>
+          <button class="fb-btn" onclick="feedback('not_now')">Not now</button>
+          <button class="fb-btn" onclick="feedback('not_me')">This isn't me</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Signal weights — the learning loop</h3>
+      <p class="note" style="margin-top:-4px;">Each signal has a weight that decides how much it contributes to confidence. Feedback recalibrates these weights in real time. Try clicking a feedback button above, then watch this panel.</p>
+      <div id="weightsPanel"></div>
+      <div id="feedbackLog" class="note" style="margin-top:12px;"></div>
+    </div>
+  </section>
+
+  <!-- ===== TAB 2: Contrast ===== -->
+  <section id="contrast">
+    <div class="card">
+      <h3 style="margin-top:0;">Same detected event — different response per customer</h3>
+      <p class="note" style="margin-top:-4px;">The engine never applies one treatment to everyone. Urgency, financial situation and confidence all shape what happens next.</p>
+      <div class="contrast-grid">
+        <div class="contrast-card">
+          <h4>Sophie — mid income, high urgency</h4>
+          <div>Detected: <b>moving_house</b> (88%)</div>
+          <div>Action: Uninsured at new address — proactive outreach with address + insurance bundle</div>
+          <span class="chan chan-voice">Voice note (ElevenLabs)</span>
+        </div>
+        <div class="contrast-card">
+          <h4>Customer B — high income</h4>
+          <div>Detected: <b>moving_house</b> (81%)</div>
+          <div>Action: Investment/relocation conversation, no urgent risk flagged</div>
+          <span class="chan chan-kate">Kate message</span>
+        </div>
+        <div class="contrast-card">
+          <h4>Customer C — low balance</h4>
+          <div>Detected: <b>moving_house</b> (76%)</div>
+          <div>Action: Budget check (rent+utilities vs income) shown passively — no sales push</div>
+          <span class="chan chan-card">Passive in-app card</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAB 3: Dashboard ===== -->
+  <section id="dashboard">
+    <div class="card">
+      <div id="loadStatus">Loading predictions.csv and ground_truth.csv…</div>
+      <div class="stat-grid" id="statGrid" style="margin-top:14px;"></div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Detections by event type</h3>
+      <div id="barChart"></div>
+    </div>
+    <p class="note">Ground truth is used here only to score the engine's own accuracy — it was never given to the model.</p>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  function toggleWhy() {
+    document.getElementById('whyPanel').classList.toggle('show');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1800);
+  }
+
+  // Signal weights for Sophie's moving_house detection -- starting values from the design doc
+  const weights = [
+    { name: 'Notary / rent deposit', val: 90, tier: 'strong' },
+    { name: 'Moving company payment', val: 85, tier: 'strong' },
+    { name: '"Change address" search', val: 80, tier: 'strong' },
+    { name: 'Card use shifts city', val: 60, tier: 'medium' },
+    { name: 'IKEA / furniture purchase', val: 25, tier: 'weak' },
+  ];
+  const feedbackLogEntries = [];
+
+  function renderWeights() {
+    const panel = document.getElementById('weightsPanel');
+    panel.innerHTML = weights.map(w => `
+      <div class="weight-row">
+        <div class="weight-label">${w.name}</div>
+        <div class="weight-track"><div class="weight-fill ${w.tier}" style="width:${w.val}%"></div></div>
+        <div class="weight-val">${w.val}</div>
+      </div>
+    `).join('');
+    const logEl = document.getElementById('feedbackLog');
+    logEl.innerHTML = feedbackLogEntries.length
+      ? '<b>Feedback log:</b>' + feedbackLogEntries.map(e => `<div class="log-entry">${e}</div>`).join('')
+      : 'No feedback yet — click a button on Sophie\'s message above.';
+  }
+  renderWeights();
+
+  function feedback(kind) {
+    const now = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    if (kind === 'yes') {
+      showToast('Address, insurance and utilities update started for Sophie.');
+      weights.forEach(w => w.val = Math.min(100, w.val + 3)); // reinforces confidence in these signals
+      feedbackLogEntries.unshift(`${now} — Sophie confirmed "Yes, help me". Signal weights reinforced slightly.`);
+    } else if (kind === 'not_now') {
+      showToast('Noted — Kate will wait and try again later.');
+      feedbackLogEntries.unshift(`${now} — Sophie chose "Not now". Next contact delayed; contact frequency for Sophie reduced.`);
+    } else {
+      showToast('Thanks — the signals that triggered this are now weighted down for Sophie.');
+      weights.forEach(w => w.val = Math.max(5, Math.round(w.val * 0.5))); // "this isn't me" -- halve every signal's weight
+      feedbackLogEntries.unshift(`${now} — Sophie said "This isn't me". Every signal that contributed to this detection is weighted down for her specifically.`);
+    }
+    renderWeights();
+  }
+
+  // Sophie's signal timeline
+  const timelineData = [
+    { day: 'Day 1', text: '€1,800 rent deposit to a new landlord in Antwerp', conf: '45%' },
+    { day: 'Day 3', text: 'Payment to "Verhuizingen Peeters" (moving company)', conf: '45%' },
+    { day: 'Day 5', text: 'Searched "change address" in the app', conf: '70%' },
+    { day: 'Day 6', text: 'Asked Kate: "How do I change my domicile with KBC?"', conf: '70%' },
+    { day: 'Day 8', text: '€640 at IKEA, €120 at a paint shop', conf: '75%' },
+    { day: 'Day 9', text: 'Card payments now happening in Antwerp, not Ghent', conf: '88%' },
+    { day: 'Day 12', text: 'First payment to a new energy supplier at the new address', conf: '88%' },
+  ];
+  const tlEl = document.getElementById('timeline');
+  timelineData.forEach(row => {
+    const div = document.createElement('div');
+    div.className = 'signal-row';
+    div.innerHTML = `<span class="signal-day">${row.day}</span><span>${row.text}</span><span class="signal-conf">${row.conf}</span>`;
+    tlEl.appendChild(div);
+  });
+
+  // ---- Dashboard: load CSVs ----
+  // Proper CSV line parser: handles quoted fields that contain commas
+  // (predictions.csv's "reasoning" column often does), so columns don't shift.
+  function parseCSVLine(line) {
+    const result = [];
+    let cur = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (inQuotes) {
+        if (ch === '"') {
+          if (line[i + 1] === '"') { cur += '"'; i++; }
+          else { inQuotes = false; }
+        } else {
+          cur += ch;
+        }
+      } else {
+        if (ch === '"') inQuotes = true;
+        else if (ch === ',') { result.push(cur); cur = ''; }
+        else cur += ch;
+      }
+    }
+    result.push(cur);
+    return result;
+  }
+
+  function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    const headers = parseCSVLine(lines[0]);
+    return lines.slice(1).map(line => {
+      const cols = parseCSVLine(line);
+      const obj = {};
+      headers.forEach((h, i) => obj[h.trim()] = (cols[i] || '').trim());
+      return obj;
+    });
+  }
+
+  async function loadDashboard() {
+    const statusEl = document.getElementById('loadStatus');
+    try {
+      const [predRes, truthRes] = await Promise.all([
+        fetch('predictions.csv'),
+        fetch('ground_truth.csv'),
+      ]);
+      if (!predRes.ok || !truthRes.ok) throw new Error('CSV not found');
+      const predictions = parseCSV(await predRes.text());
+      const truth = parseCSV(await truthRes.text());
+
+      const truthMap = {};
+      truth.forEach(t => truthMap[t.customer_id] = t.planted_event_type);
+
+      let correct = 0, falsePos = 0, falseNeg = 0, total = predictions.length;
+      const detectedByType = {};
+      let plantedTotal = 0;
+
+      predictions.forEach(p => {
+        const trueEvent = truthMap[p.customer_id] || 'none';
+        const acted = p.act === 'True';
+        if (trueEvent !== 'none') plantedTotal++;
+
+        if (p.predicted_event !== 'none') {
+          detectedByType[p.predicted_event] = (detectedByType[p.predicted_event] || 0) + 1;
+        }
+        if (trueEvent === 'none' && p.predicted_event !== 'none' && acted) falsePos++;
+        else if (trueEvent !== 'none' && (p.predicted_event === 'none' || !acted)) falseNeg++;
+        else if (trueEvent === p.predicted_event) correct++;
+      });
+
+      statusEl.textContent = `Loaded ${total} customers from predictions.csv`;
+
+      const stats = [
+        { num: total, label: 'Customers scanned', cls: '' },
+        { num: plantedTotal, label: 'Real planted events', cls: '' },
+        { num: correct, label: 'Correct detections', cls: 'good' },
+        { num: falsePos, label: 'False positives', cls: falsePos === 0 ? 'good' : '' },
+        { num: falseNeg, label: 'Missed events', cls: falseNeg === 0 ? 'good' : '' },
+      ];
+      const statGrid = document.getElementById('statGrid');
+      statGrid.innerHTML = stats.map(s =>
+        `<div class="stat"><div class="num ${s.cls}">${s.num}</div><div class="label">${s.label}</div></div>`
+      ).join('');
+
+      const maxCount = Math.max(1, ...Object.values(detectedByType));
+      const barChart = document.getElementById('barChart');
+      barChart.innerHTML = Object.entries(detectedByType)
+        .sort((a,b) => b[1]-a[1])
+        .map(([type, count]) => `
+          <div class="bar-row">
+            <div class="bar-label">${type.replace('_',' ')}</div>
+            <div class="bar-track"><div class="bar-fill" style="width:${(count/maxCount*100)}%"></div></div>
+            <div class="bar-count">${count}</div>
+          </div>
+        `).join('');
+    } catch (e) {
+      statusEl.textContent = 'Could not load predictions.csv / ground_truth.csv. Serve this folder with "python -m http.server" and open http://localhost:8000/dashboard.html (opening the file directly won\'t work due to browser CSV-loading restrictions).';
+    }
+  }
+  loadDashboard();
+</script>
+</body>
+</html>

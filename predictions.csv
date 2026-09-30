@@ -1,0 +1,401 @@
+customer_id,predicted_event,confidence,stage,reasoning,signals_used,act,channel,recommended_actions,reason_suppressed
+C0001,moving_house,90,in_transition,"The customer has a rent deposit payment, a moving service transaction, and searched for changing their address.",rent deposit; moving service; search change address; message to Kate about changing address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0002,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; transport transactions; grocery transactions,False,none,,no event detected
+C0003,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0004,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent payments; grocery spending; dining spending,False,none,,no event detected
+C0005,new_baby,85,settled,"The customer searched for 'maternity leave' and inquired about benefits after having a baby, alongside multiple baby-related purchases.",search_maternity_leave; message_benefits_after_baby; baby_related_transactions,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0006,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0007,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0008,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0009,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage payments; grocery spending; dining expenses,False,none,,no event detected
+C0010,none,0,n/a,No specific signals indicating any life events were detected.,,False,none,,no event detected
+C0011,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0012,none,0,n/a,There are no significant signals indicating a life event.,,False,none,,no event detected
+C0013,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0014,new_baby,85,settled,The customer has made multiple purchases related to baby items and inquired about maternity leave and benefits after having a baby.,baby purchases; search maternity leave; message about benefits after having a baby,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0015,starting_business,85,in_transition,"The customer has made a company registration payment and searched for a self-employed bank account, indicating they are starting a business.",company registration payment; search for self-employed bank account; message about account setup for freelancer,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0016,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0017,starting_business,85,in_transition,"The customer has made a large transfer for business setup and searched for self-employed bank account options, indicating they are starting a business.",large_transfer_business_setup; search_self-employed_bank_account; message_best_account_setup_freelancer,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0018,new_job,85,settled,The customer explicitly mentioned starting a new job in a message to Kate and searched for information on changing employer details.,message_new_job; search_change_employer_details,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0019,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0020,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0021,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0022,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0023,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0024,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0025,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment; grocery transactions; dining transactions,False,none,,no event detected
+C0026,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; Housing transactions,False,none,,no event detected
+C0027,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0028,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; frequent grocery purchases; frequent dining transactions,False,none,,no event detected
+C0029,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; groceries; dining,False,none,,no event detected
+C0030,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0031,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; housing_transactions,False,none,,no event detected
+C0032,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0033,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0034,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0035,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0036,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage payments,False,none,,no event detected
+C0037,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; Fluvius Energy transactions,False,none,,no event detected
+C0038,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0039,none,0,n/a,No significant signals indicating a life event were detected.,,False,none,,no event detected
+C0040,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery spending; transport spending,False,none,,no event detected
+C0041,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0042,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; groceries; dining,False,none,,no event detected
+C0043,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0044,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_expenses; dining_expenses,False,none,,no event detected
+C0045,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0046,retirement_approaching,85,in_transition,"The customer requested a pension simulation and inquired about retirement at age 65, indicating they are planning for retirement.",pension simulation request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0047,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0048,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0049,new_baby,85,settled,The customer has multiple baby-related transactions and searched for maternity leave benefits.,baby transactions; searched 'maternity leave'; message about benefits after having a baby,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0050,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0051,new_baby,85,settled,"The customer searched for 'maternity leave' and inquired about benefits after having a baby, alongside multiple baby-related purchases.",search_maternity_leave; message_benefits_after_baby; transactions_baby_related,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0052,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; housing_transactions,False,none,,no event detected
+C0053,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0054,new_baby,85,settled,The customer has made multiple purchases related to baby items and inquired about benefits after having a baby.,baby purchases; search for maternity leave; message about benefits after having a baby,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0055,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0056,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0057,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0058,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0059,moving_house,90,settled,"The customer has a moving company charge, a rent deposit, and searched for 'change address' while also messaging Kate about updating their address.",moving company charge; rent deposit; search change address; message to Kate about address update,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0060,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; housing_transactions,False,none,,no event detected
+C0061,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery purchases,False,none,,no event detected
+C0062,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0063,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment; utilities; groceries,False,none,,no event detected
+C0064,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0065,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0066,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0067,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0068,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0069,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0070,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0071,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0072,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage payments,False,none,,no event detected
+C0073,starting_business,85,in_transition,"The customer has made a company registration payment and searched for a self-employed bank account, indicating they are starting a business.",business registration transaction; search for self-employed bank account; message about freelancer account setup,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0074,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0075,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery transactions; dining transactions,False,none,,no event detected
+C0076,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0077,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0078,none,0,n/a,There are no signals indicating any life events.,,False,none,,no event detected
+C0079,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0080,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; grocery transactions; dining transactions,False,none,,no event detected
+C0081,retirement_approaching,85,in_transition,"The customer requested a pension simulation and inquired about retirement at age 65, indicating they are planning for retirement.",pension simulation request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0082,none,0,n/a,There are no significant signals indicating a life event.,,False,none,,no event detected
+C0083,retirement_approaching,85,in_transition,"The customer requested a pension simulation and inquired about retirement at age 65, indicating they are considering retirement options.",pension simulation request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0084,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0085,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0086,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0087,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0088,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0089,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0090,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0091,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0092,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0093,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0094,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0095,none,0,n/a,There are no signals indicating any life events.,,False,none,,no event detected
+C0096,none,0,n/a,There are no significant signals indicating any life events.,,False,none,,no event detected
+C0097,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0098,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens,False,none,,no event detected
+C0099,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0100,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage payments,False,none,,no event detected
+C0101,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0102,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0103,new_job,85,settled,The customer explicitly mentioned starting a new job in a message to Kate and searched for information on changing employer details.,message_new_job; search_change_employer_details,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0104,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_purchases,False,none,,no event detected
+C0105,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0106,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0107,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0108,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; housing transactions,False,none,,no event detected
+C0109,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0110,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0111,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payments; grocery purchases,False,none,,no event detected
+C0112,new_baby,85,settled,The customer has made multiple purchases at baby-related stores and inquired about benefits after having a baby.,baby purchases; search for maternity leave; inquiry about benefits after having a baby,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0113,new_job,90,settled,The customer explicitly mentioned starting a new job in a message to Kate and received a salary from a new employer.,message_to_kate; salary_new_employer,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0114,retirement_approaching,85,early,"The customer requested a pension simulation and inquired about retirement at age 65, indicating they are considering retirement planning.",Pension Simulation Request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0115,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; Rent Payment - Immo Janssens,False,none,,no event detected
+C0116,new_job,85,settled,The customer received a salary from a new employer and inquired about updating employer details after starting a new job.,salary - new employer; search - change employer details; message - new job inquiry,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0117,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0118,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0119,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0120,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0121,new_job,85,settled,The customer explicitly mentioned starting a new job in a message to Kate and searched for information on changing employer details.,message_new_job; search_change_employer_details,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0122,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; grocery expenses; dining expenses,False,none,,no event detected
+C0123,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_expenses; dining_expenses,False,none,,no event detected
+C0124,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0125,none,0,n/a,There are no significant signals indicating a life event.,,False,none,,no event detected
+C0126,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0127,new_job,85,settled,The customer mentioned starting a new job in a message to Kate and searched for information on changing employer details.,message_new_job; search_change_employer_details,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0128,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0129,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0130,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage_payment; grocery_purchases,False,none,,no event detected
+C0131,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0132,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; Rent Payment - Immo Janssens,False,none,,no event detected
+C0133,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0134,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0135,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment; grocery purchases,False,none,,no event detected
+C0136,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0137,starting_business,85,in_transition,"The customer has made a company registration payment and inquired about accounts for freelancers, indicating they are starting a business.",Company Registration - Ondernemingsloket; search for self-employed bank account; message about account setup for freelancer,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0138,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; housing,False,none,,no event detected
+C0139,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; housing_transaction,False,none,,no event detected
+C0140,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0141,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; grocery spending,False,none,,no event detected
+C0142,moving_house,90,settled,"The customer has a rent payment and a moving company transaction, along with a search for changing address and a message to update their address.",rent payment; moving company; search change address; message update address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0143,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens,False,none,,no event detected
+C0144,new_baby,85,settled,The customer has made multiple purchases at baby-related stores and inquired about benefits after having a baby.,baby purchases; search maternity leave; message about benefits after having a baby,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0145,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0146,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC; Fluvius Energy; groceries,False,none,,no event detected
+C0147,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0148,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0149,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0150,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0151,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0152,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0153,none,0,n/a,There are no signals indicating any life events.,,False,none,,no event detected
+C0154,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0155,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0156,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0157,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0158,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; groceries,False,none,,no event detected
+C0159,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0160,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0161,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery spending; dining spending,False,none,,no event detected
+C0162,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0163,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment,False,none,,no event detected
+C0164,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0165,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0166,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; grocery transactions,False,none,,no event detected
+C0167,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; groceries,False,none,,no event detected
+C0168,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0169,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0170,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0171,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_purchases,False,none,,no event detected
+C0172,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0173,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0174,moving_house,90,settled,"The customer has a significant rent deposit and moving company payment, along with a search for changing address and a message to update their address.",rent deposit; moving company payment; search change address; message to update address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0175,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0176,retirement_approaching,85,in_transition,"The customer requested a pension simulation and inquired about retirement at age 65, indicating they are considering retirement options.",Pension Simulation Request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0177,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0178,new_job,85,settled,The customer received a salary from a new employer and explicitly mentioned starting a new job in a message to Kate.,new_job_salary; message_to_kate,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0179,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0180,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0181,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0182,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; utilities; groceries,False,none,,no event detected
+C0183,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0184,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0185,new_job,85,settled,The customer explicitly mentioned starting a new job in a message to Kate and searched for information on changing employer details.,message_new_job; search_change_employer,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0186,none,0,n/a,There are no signals indicating any of the specified life events.,,False,none,,no event detected
+C0187,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery purchases,False,none,,no event detected
+C0188,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; transport_transactions,False,none,,no event detected
+C0189,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0190,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0191,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_purchases,False,none,,no event detected
+C0192,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery transactions; dining transactions,False,none,,no event detected
+C0193,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0194,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0195,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0196,retirement_approaching,85,early,"The customer requested a pension simulation and inquired about retirement at age 65, indicating concern about future retirement planning.",pension simulation request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0197,none,0,n/a,There are no signals indicating any life events.,,False,none,,no event detected
+C0198,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0199,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; groceries; dining,False,none,,no event detected
+C0200,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0201,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment,False,none,,no event detected
+C0202,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0203,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; housing_transactions,False,none,,no event detected
+C0204,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0205,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0206,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0207,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0208,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0209,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment,False,none,,no event detected
+C0210,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0211,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0212,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage_payment; grocery_spending,False,none,,no event detected
+C0213,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0214,none,0,n/a,There are no significant signals indicating any life events.,,False,none,,no event detected
+C0215,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0216,new_job,85,settled,The customer received a salary from a new employer and inquired about updating employer details after starting a new job.,new_salary; search_change_employer; message_new_job,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0217,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0218,starting_business,85,in_transition,"The customer has made a company registration payment and searched for a self-employed bank account, indicating they are starting a business.",business registration; search for self-employed bank account; message about freelancer account setup,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0219,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0220,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery transactions; dining transactions,False,none,,no event detected
+C0221,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0222,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0223,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payments; grocery expenses; dining expenses,False,none,,no event detected
+C0224,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,large_rent_payment; frequent_grocery_purchases,False,none,,no event detected
+C0225,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens,False,none,,no event detected
+C0226,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0227,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; mortgage,False,none,,no event detected
+C0228,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0229,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0230,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; grocery transactions; dining transactions,False,none,,no event detected
+C0231,starting_business,85,in_transition,"The customer has made a company registration payment and searched for a self-employed bank account, indicating they are starting a business.",company registration payment; search for self-employed bank account; message about account setup for freelancer,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0232,none,0,n/a,There are no signals indicating any life events.,,False,none,,no event detected
+C0233,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0234,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0235,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0236,none,0,n/a,There are no significant signals indicating a life event.,,False,none,,no event detected
+C0237,none,0,n/a,There are no signals indicating any life events.,,False,none,,no event detected
+C0238,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0239,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0240,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0241,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; groceries,False,none,,no event detected
+C0242,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0243,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0244,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0245,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0246,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; increased grocery spending; increased dining spending,False,none,,no event detected
+C0247,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0248,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0249,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0250,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0251,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0252,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payments; grocery purchases,False,none,,no event detected
+C0253,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage_payment; grocery_expenses; utility_expenses,False,none,,no event detected
+C0254,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0255,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0256,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0257,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0258,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; utilities; groceries,False,none,,no event detected
+C0259,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0260,moving_house,90,in_transition,"The customer has a significant rent deposit and moving company payment, along with a search for changing address and a message to update their address.",rent deposit; moving company payment; search change address; message update address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0261,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0262,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0263,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0264,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0265,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0266,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0267,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0268,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment,False,none,,no event detected
+C0269,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0270,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0271,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0272,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0273,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0274,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; frequent groceries; frequent dining,False,none,,no event detected
+C0275,none,0,n/a,There are no significant signals indicating a life event.,,False,none,,no event detected
+C0276,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0277,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; mortgage,False,none,,no event detected
+C0278,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0279,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0280,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0281,new_job,90,settled,"The customer explicitly mentioned starting a new job in a message to Kate and received a salary from a new employer, indicating a transition to a new job.",message_to_kate; salary_new_employer,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0282,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0283,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0284,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0285,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0286,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0287,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; utilities transactions; grocery transactions,False,none,,no event detected
+C0288,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0289,new_job,85,settled,The customer received a salary from a new employer and explicitly mentioned starting a new job in a message to Kate.,new_salary; message_to_Kate,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0290,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_expenses,False,none,,no event detected
+C0291,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0292,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0293,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0294,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0295,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0296,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage_payment,False,none,,no event detected
+C0297,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0298,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0299,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent payment; increased grocery spending; increased dining expenses,False,none,,no event detected
+C0300,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0301,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0302,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0303,retirement_approaching,85,in_transition,"The customer requested a pension simulation and inquired about retirement at age 65, indicating they are considering retirement.",pension simulation request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0304,retirement_approaching,85,in_transition,"The customer requested a pension simulation and inquired about retirement at age 65, indicating they are planning for retirement.",pension simulation request; search for pension simulation; message about retirement,True,kate_message,Offer full pension simulation with an advisor | Review pension savings contribution level,
+C0305,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; groceries,False,none,,no event detected
+C0306,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0307,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0308,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0309,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent payments; grocery expenses; transport expenses,False,none,,no event detected
+C0310,moving_house,90,settled,"The customer has a significant moving company expense and searched for changing their address, along with a message to update their address.",moving company expense; search change address; message update address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0311,starting_business,85,in_transition,"The customer has made a company registration payment and searched for a self-employed bank account, indicating they are starting a business.",company registration payment; search for self-employed bank account; message about account setup for freelancer,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0312,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0313,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0314,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0315,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0316,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0317,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0318,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0319,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens,False,none,,no event detected
+C0320,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0321,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens,False,none,,no event detected
+C0322,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent payments; utilities; groceries,False,none,,no event detected
+C0323,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_transactions; dining_transactions,False,none,,no event detected
+C0324,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0325,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0326,none,0,n/a,There are no significant signals indicating any life events.,,False,none,,no event detected
+C0327,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0328,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0329,moving_house,90,in_transition,"The customer has a rent deposit payment, a moving company charge, and searched for 'change address' along with a message to update their address.",rent deposit; moving company charge; search change address; message update address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0330,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0331,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0332,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0333,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0334,moving_house,90,in_transition,"The customer has a moving company charge, a rent deposit, a search for changing address, and a message to update their address.",moving company charge; rent deposit; search change address; message to update address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0335,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0336,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment; grocery transactions; transport transactions,False,none,,no event detected
+C0337,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0338,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment - KBC,False,none,,no event detected
+C0339,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0340,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0341,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; grocery transactions; dining transactions,False,none,,no event detected
+C0342,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0343,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0344,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0345,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0346,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; grocery transactions; dining transactions,False,none,,no event detected
+C0347,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0348,moving_house,90,in_transition,"The customer has a significant moving company expense, searched for 'change address', and requested help to update their address.",moving company expense; search change address; message to Kate about address update,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0349,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0350,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0351,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0352,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0353,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0354,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0355,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0356,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0357,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0358,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0359,moving_house,90,settled,"The customer has a transaction for a moving company, a rent deposit, and searched for 'change address' along with a message to update their address.",moving_company_transaction; rent_deposit_transaction; search_change_address; message_update_address,True,voice_note,"One-tap address update across bank, insurance, other KBC services | Re-quote / transfer home contents insurance to new address",
+C0360,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0361,new_job,85,settled,The customer explicitly mentioned starting a new job in a message to Kate and searched for information on changing employer details.,message_new_job; search_change_employer_details,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0362,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0363,none,0,n/a,There are no signals indicating any life events.,,False,none,,no event detected
+C0364,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens,False,none,,no event detected
+C0365,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Mortgage Payment; Home Insurance,False,none,,no event detected
+C0366,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0367,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0368,new_job,85,settled,The customer explicitly mentioned starting a new job in a message to Kate and searched for information on changing employer details.,message_new_job; search_change_employer_details,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0369,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0370,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0371,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0372,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0373,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,Rent Payment - Immo Janssens; housing transactions,False,none,,no event detected
+C0374,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0375,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0376,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_shopping,False,none,,no event detected
+C0377,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0378,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0379,starting_business,85,in_transition,The customer has made multiple business-related transactions and searched for self-employed bank account options.,business transactions; search for self-employed bank account; message about account setup for freelancer,True,kate_message,Offer self-employed / business current account | Flag possible personal/business spending mix for bookkeeping,
+C0380,none,0,settled,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment,False,none,,no event detected
+C0381,new_baby,85,settled,The customer has multiple transactions related to baby expenses and searched for maternity leave benefits.,baby transactions; searched maternity leave; message about benefits after having a baby,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0382,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,rent_payment; grocery_expenses; dining_expenses,False,none,,no event detected
+C0383,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0384,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0385,none,0,n/a,There are no significant signals indicating any life events.,,False,none,,no event detected
+C0386,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0387,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0388,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0389,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0390,new_baby,85,settled,"The customer searched for 'maternity leave' and inquired about benefits after having a baby, alongside multiple transactions labeled as 'baby'.",search_maternity_leave; message_benefits_after_baby; transactions_baby,True,kate_message,Check child benefit / Groeipakket registration status | Review or add child savings account,
+C0391,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0392,new_job,85,settled,The customer received a salary from a new employer and explicitly mentioned starting a new job in a message to Kate.,new_job_salary; message_to_kate,True,kate_message,Update employer/income details on file | Review salary account benefits eligible at new income level,
+C0393,none,0,n/a,No specific signals indicating a life event were detected.,,False,none,,no event detected
+C0394,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage payments; grocery spending; dining expenses,False,none,,no event detected
+C0395,none,0,n/a,There are no significant signals indicating a life event.,,False,none,,no event detected
+C0396,none,0,n/a,There are no specific signals indicating a life event.,,False,none,,no event detected
+C0397,none,0,in_transition,Suppressed: claimed event not backed by verifiable evidence in the data,mortgage_payment; grocery_purchases,False,none,,no event detected
+C0398,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
+C0399,none,0,n/a,There are no specific signals indicating any life event.,,False,none,,no event detected
+C0400,none,0,n/a,There are no specific signals indicating any life events.,,False,none,,no event detected
